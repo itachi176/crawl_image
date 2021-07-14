@@ -1,6 +1,8 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from time import sleep
+import requests
+import os 
 
 def scroll_page():
     for i in range(7):
@@ -43,8 +45,17 @@ img_urls = find_images()
 #dong driver
 driver.close()
 
-print(img_urls)
+# print(img_urls)
 
+#download
+def download(folder):
+    os.mkdir(folder)
+    for i in range(len(img_urls)):
+        response = requests.get(img_urls[i])
+        name = "image{}".format(i)
+        file = open("./image/"+name+".png", "wb")
+        file.write(response.content)
+        file.close()
 
-
+download("image")
 
