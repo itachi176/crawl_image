@@ -31,7 +31,7 @@ def find_images():
 driver = webdriver.Chrome(executable_path="./driver/chromedriver")
 
 #define url 
-url = "https://www.google.com/search?q={}&site=webhp&tbm=isch".format("computer")
+url = "https://www.google.com/search?q={}&site=webhp&tbm=isch".format("itachi")
 
 #get url 
 driver.get(url)
@@ -49,7 +49,10 @@ driver.close()
 
 #download
 def download(folder):
-    os.mkdir(folder)
+    if (os.path.isdir(folder)):
+        pass 
+    else:
+        os.mkdir(folder)
     for i in range(len(img_urls)):
         response = requests.get(img_urls[i])
         name = "image{}".format(i)
