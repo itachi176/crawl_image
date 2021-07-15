@@ -117,7 +117,7 @@ class Ui_Dialog(object):
         for i in range(len(img_urls)):
             response = requests.get(img_urls[i])
             name = "image{}".format(i)
-            file = open("./"+folder/"+name+".png", "wb")
+            file = open("./"+folder+"/"+name+".png", "wb")
             file.write(response.content)
             file.close()
 
