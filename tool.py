@@ -4,10 +4,6 @@ from time import sleep
 import requests
 import os 
 
-def scroll_page():
-    for i in range(7):
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        sleep(3)
 
 def click_button():
     more_imgs_button_xpath = '/html/body/div[2]/c-wiz/div[3]/div[1]/div/div/div/div[1]/div[2]/div[2]/input'
@@ -27,27 +23,29 @@ def find_images():
 
     return imgs_urls
 
-#create webdriver
-driver = webdriver.Chrome(executable_path="./driver/chromedriver")
+# #create webdriver
+# driver = webdriver.Chrome(executable_path="./driver/chromedriver")
 
-#define url 
-url = "https://www.google.com/search?q={}&site=webhp&tbm=isch".format("itachi")
+# #define url 
+# url = "https://www.google.com/search?q={}&site=webhp&tbm=isch".format("itachi")
 
-#get url 
-driver.get(url)
+# #get url 
+# driver.get(url)
 
-#keo den khi nao nhan vao nut them anh 
-scroll_page()
-click_button()
-#tim anh 
-img_urls = find_images()
+# #keo den khi nao nhan vao nut them anh 
+# scroll_page()
+# click_button()
+# #tim anh 
+# img_urls = find_images()
 
-#dong driver
-driver.close()
+# #dong driver
+# driver.close()
 
-# print(img_urls)
+# # print(img_urls)
 
-#download
+# #download
+
+
 def download(folder):
     if (os.path.isdir(folder)):
         pass 
@@ -60,5 +58,5 @@ def download(folder):
         file.write(response.content)
         file.close()
 
-download("image")
+# download("image")
 

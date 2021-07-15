@@ -115,7 +115,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Crawling .......</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
