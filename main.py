@@ -73,6 +73,7 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "Start Crawl "))
 
     def run(self):
+        self.label_4.setText("Crawling...")
         driver = webdriver.Chrome(executable_path="./driver/chromedriver")
         url = "https://www.google.com/search?q={}&site=webhp&tbm=isch".format(self.textEdit.toPlainText())
         driver.get(url)
@@ -85,6 +86,8 @@ class Ui_Dialog(object):
         #dong driver
         driver.close()
         self.download(self.textEdit_2.toPlainText(), img_urls)
+        self.label_4.setText("Done!!!!")
+
         
     def click_button(self, driver):
         more_imgs_button_xpath = '/html/body/div[2]/c-wiz/div[3]/div[1]/div/div/div/div[1]/div[2]/div[2]/input'
