@@ -79,7 +79,10 @@ class Ui_Dialog(object):
         driver.get(url)
         #keo den khi nao nhan vao nut them anh 
         self.scroll_page(driver)
-        self.click_button(driver)
+        try:
+            self.click_button(driver)
+        except:
+            pass
         #tim anh 
         img_urls = self.find_images(driver)
         # print(img_urls)
