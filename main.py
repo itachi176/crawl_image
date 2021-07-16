@@ -82,6 +82,7 @@ class Ui_Dialog(object):
         try:
             self.click_button(driver)
         except:
+            # print("HET ROI")
             pass
         #tim anh 
         img_urls = self.find_images(driver)
